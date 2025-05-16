@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<robot name="rover" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="gripper" params="parent" >
+
+    <!-- Base Link -->
+    <link name="arm_09_link">
+        <collision name="arm_09_collision">
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+        <geometry>
+            <box size="0.30000 1.00000 0.10000"/>
+        </geometry>
+        </collision>
+        <visual name="arm_09">
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+        <material name="turnarrow.001"/>
+        <geometry>
+            <box size="0.30000 1.00000 0.10000"/>
+        </geometry>
+        </visual>
+        <inertial>
+            <mass value="1.0"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+    <link name="arm_10_link">
+        <collision name="arm_10_collision">
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+            <box size="0.30000 0.10000 0.60000"/>
+        </geometry>
+        </collision>
+        <visual name="arm_10">
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+        <material name="turnarrow"/>
+        <geometry>
+            <box size="0.30000 0.10000 0.60000"/>
+        </geometry>
+        </visual>
+        <inertial>
+            <mass value="3.0"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+    <link name="arm_11_link">
+        <collision name="arm_11_collision">
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <geometry>
+            <box size="0.30000 0.10000 0.60000"/>
+        </geometry>
+        </collision>
+        <visual name="arm_11">
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+        <material name="turnarrow"/>
+        <geometry>
+            <box size="0.30000 0.10000 0.60000"/>
+        </geometry>
+        </visual>
+        <inertial>
+            <mass value="3.0"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+
+    <!-- Base Joint -->
+    <joint name="arm_09_link_joint" type="fixed">
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -1.17500"/>
+        <parent link="arm_08_link"/>
+        <child link="arm_09_link"/>
+    </joint>
+    <joint name="arm_10_link_joint" type="prismatic">
+        <limit lower="0.00000" upper="0.25000" effort="1000.00000" velocity="100.00000"/>
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 0.45000 -0.35000"/>
+        <parent link="arm_09_link"/>
+        <child link="arm_10_link"/>
+        <axis xyz="0.00000 -1.00000 0.00000"/>
+    </joint>
+    <joint name="arm_11_link_joint" type="prismatic">
+        <limit lower="0.00000" upper="0.25000" effort="1000.00000" velocity="100.00000"/>
+        <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 -0.45000 -0.35000"/>
+        <parent link="arm_09_link"/>
+        <child link="arm_11_link"/>
+        <axis xyz="0.00000 1.00000 0.00000"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

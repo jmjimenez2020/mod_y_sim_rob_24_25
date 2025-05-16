@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+
+<robot name="rover" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <xacro:macro name="robot_base" >
+
+        <!-- Properties -->
+        
+        <!-- Base Link -->
+        <link name="base_footprint">
+            <collision name="base_ft_collision">
+                <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+                <geometry>
+                    <box size="0.10000 0.10000 0.10000"/>
+                </geometry>
+            </collision>
+            <visual name="base_ft">
+                <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+                <material name="turnarrow.004"/>
+                <geometry>
+                    <box size="0.10000 0.10000 0.10000"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name="base_link">
+            <collision name="Base_collision">
+                <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+                <geometry>
+                    <box size="3.60000 1.20000 1.00000"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <inertia ixx="101.66667" ixy="0.00000" ixz="0.00000" iyy="581.66664" iyz="0.00000" izz="599.99998"/>
+                <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+                <mass value="500.00000"/>
+            </inertial>
+            <visual name="Base">
+                <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+                <material name="turnarrow.004"/>
+                <geometry>
+                    <box size="3.60000 1.20000 1.00000"/>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name="box_link">
+            <collision name="box_collision">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.12000 0.00000 0.00000"/>
+            <geometry>
+                <box size="1.65000 1.00000 0.10000"/>
+            </geometry>
+            </collision>
+            <inertial>
+            <inertia ixx="0.42083" ixy="0.00000" ixz="0.00000" iyy="1.13854" iyz="0.00000" izz="1.55104"/>
+            <origin rpy="0.00000 0.00000 0.00000" xyz="-0.12000 -0.00000 -0.00000"/>
+            <mass value="5.00000"/>
+            </inertial>
+            <visual name="box">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.12000 -0.00000 -0.00000"/>
+            <material name="turnarrow.001"/>
+            <geometry>
+                <box size="1.65000 1.00000 0.10000"/>
+            </geometry>
+            </visual>
+        </link>
+        <link name="box_wall1_link">
+            <collision name="box_wall1_collision">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.10000"/>
+            <geometry>
+                <box size="0.10000 1.20000 0.60000"/>
+            </geometry>
+            </collision>
+            <inertial>
+            <inertia ixx="0.75000" ixy="0.00000" ixz="0.00000" iyy="0.15417" iyz="0.00000" izz="0.60417"/>
+            <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.10000"/>
+            <mass value="5.00000"/>
+            </inertial>
+            <visual name="box_wall1">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 -0.00000 -0.10000"/>
+            <material name="turnarrow.001"/>
+            <geometry>
+                <box size="0.10000 1.20000 0.60000"/>
+            </geometry>
+            </visual>
+        </link>
+        <link name="box_wall2_link">
+            <collision name="box_wall2_collision">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.12000 -0.00000 -0.10000"/>
+            <geometry>
+                <box size="1.65000 0.10000 0.60000"/>
+            </geometry>
+            </collision>
+            <inertial>
+            <inertia ixx="0.15417" ixy="0.00000" ixz="0.00000" iyy="1.28437" iyz="0.00000" izz="1.13854"/>
+            <origin rpy="0.00000 0.00000 0.00000" xyz="-0.12000 0.00000 -0.10000"/>
+            <mass value="5.00000"/>
+            </inertial>
+            <visual name="box_wall2">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.12000 -0.00000 -0.10000"/>
+            <material name="turnarrow.001"/>
+            <geometry>
+                <box size="1.65000 0.10000 0.60000"/>
+            </geometry>
+            </visual>
+        </link>
+        <link name="box_wall3_link">
+            <collision name="box_wall3_collision">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.12000 -0.00000 -0.10000"/>
+            <geometry>
+                <box size="1.65000 0.10000 0.60000"/>
+            </geometry>
+            </collision>
+            <inertial>
+            <inertia ixx="0.15417" ixy="0.00000" ixz="0.00000" iyy="1.28437" iyz="0.00000" izz="1.13854"/>
+            <origin rpy="0.00000 0.00000 0.00000" xyz="-0.12000 0.00000 -0.10000"/>
+            <mass value="5.00000"/>
+            </inertial>
+            <visual name="box_wall3">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.12000 -0.00000 -0.10000"/>
+            <material name="turnarrow.001"/>
+            <geometry>
+                <box size="1.65000 0.10000 0.60000"/>
+            </geometry>
+            </visual>
+        </link>
+        <link name="box_wall4_link">
+            <collision name="box_wall4_collision">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.10000"/>
+            <geometry>
+                <box size="0.10000 1.20000 0.60000"/>
+            </geometry>
+            </collision>
+            <inertial>
+            <inertia ixx="0.75000" ixy="0.00000" ixz="0.00000" iyy="0.15417" iyz="0.00000" izz="0.60417"/>
+            <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.10000"/>
+            <mass value="5.00000"/>
+            </inertial>
+            <visual name="box_wall4">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.10000"/>
+            <material name="Material.002"/>
+            <geometry>
+                <box size="0.10000 1.20000 0.60000"/>
+            </geometry>
+            </visual>
+        </link>
+
+        <!-- Base Joint -->
+        <joint name="base_footprint_joint" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0 0.5"/>
+            <parent link="base_footprint"/>
+            <child link="base_link"/>
+        </joint>
+
+        <joint name="box_link_joint" type="fixed">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.75000 -0.00000 0.55000"/>
+            <parent link="base_link"/>
+            <child link="box_link"/>
+        </joint>
+
+        <joint name="box_wall1_link_joint" type="fixed">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.99500 0.00000 0.35000"/>
+            <parent link="box_link"/>
+            <child link="box_wall1_link"/>
+        </joint>
+
+        <joint name="box_wall2_link_joint" type="fixed">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 -0.55000 0.35000"/>
+            <parent link="box_link"/>
+            <child link="box_wall2_link"/>
+        </joint>
+
+        <joint name="box_wall3_link_joint" type="fixed">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00000 0.55000 0.35000"/>
+            <parent link="box_link"/>
+            <child link="box_wall3_link"/>
+        </joint>
+
+        <joint name="box_wall4_link_joint" type="fixed">
+            <origin rpy="0.00000 0.00000 -0.00000" xyz="0.75000 0.00000 0.35000"/>
+            <parent link="box_link"/>
+            <child link="box_wall4_link"/>
+        </joint>
+            
+    </xacro:macro>
+
+</robot>

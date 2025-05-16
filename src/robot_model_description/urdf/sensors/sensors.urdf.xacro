@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot name="rover" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="sensors"  params="parent">
+
+    <joint name="sensors_link_joint" type="fixed">
+      <origin rpy="0.00000 1.57000 0" xyz="0.00000 0.00000 -0.05000"/>
+      <parent link="${parent}"/> 
+      <child link="sensors_link"/>
+    </joint>
+
+    <link name="sensors_link">
+        <collision name="sensors_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+            <box size="0.10000 0.30000 0.20000"/>
+        </geometry>
+        </collision>
+        <visual name="sensors">
+            <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+            <material name="gray">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>
+            <geometry>
+                <box size="0.10000 0.30000 0.20000"/>
+            </geometry>
+        </visual>
+        <inertial>
+            <mass value="1.0"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="sensors_link">
+      <sensor name="sensors" type="camera">
+        <visualize>true</visualize>
+        <update_rate>30</update_rate>
+        <topic>/arm_camera/image</topic>
+        <camera>
+          <horizontal_fov>1.57</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.10</near>
+            <far>15.0</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+          <optical_frame_id>sensors_link</optical_frame_id>
+        </camera>
+      </sensor>
+    </gazebo>
+
+  </xacro:macro>
+</robot>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="rover" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="imu_sensor" params="parent" >
+
+    <joint name="imu_joint" type="fixed">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <parent link="${parent}"/> 
+      <child link="imu_link"/>
+    </joint>
+
+    <link name="imu_link">
+      <collision name="IMU_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+            <box size="0.10000 0.10000 0.10000"/>
+        </geometry>
+      </collision>
+      <visual name="IMU">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="Material.001"/>
+        <geometry>
+          <box size="0.10000 0.10000 0.10000"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <gazebo reference="imu_link">
+      <sensor name="IMU" type="imu">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <topic>/imu/data</topic>
+      </sensor>
+    </gazebo>
+   
+  </xacro:macro>
+</robot>
