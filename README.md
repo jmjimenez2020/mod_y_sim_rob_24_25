@@ -20,7 +20,9 @@ En esta primera grafica podemos diferenciar tres momentos claramente. El primero
 
 Vemos como todas las articulaciones mantienen el esfuerzo en 0 menos la prismatica del brazo, que tiene que empezar con un valor mas alto para compensar el de la gravedad, que haria que el robot no se mantuviera en su posicion.
 
+Coger el cubo
 
+Volver a posicion
 
 ![G Parcial - Tiempo](./media/tiempo_vs_g_parcial.png)
 
