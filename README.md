@@ -22,6 +22,7 @@ Vemos como todas las articulaciones mantienen el esfuerzo en 0 menos la prismati
 
 Otro momento clave que se puede apreciar es cuando agarramos el cubo, se ve claramente como cuando esto ocurre el esfuerzo que hacen los joints del gripper aumentan bastante, cosa que nos hace darnos cuenta de que hemos agarrado el cubo. Diferenciamos también este momento en el que tenemos el cubo en el gripper porque el esfuerzo que hace la articulacion prismática que levanta el brazo del robot aumenta un poco también. Durante este tiempo observamos cambios en los demas joints que evidencian que el brazo se mueve de una posición a otra para acabar dejando el cubo en la caja del robot.
 
+Ya en el último tramo de la grafica podemos ver algunos cambios en las articulaciones del robot, despues de que este haya dejado el cubo en el compartimento porque el robot esta tratando de devolver la posición del brazo a la original, comandado por nosotros desde rviz.
 Volver a posicion
 
 ![G Parcial - Tiempo](./media/tiempo_vs_g_parcial.png)
