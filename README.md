@@ -2,19 +2,32 @@
 
 En este repositorio se tienen los archivos necesarios para la ejecucion del mundo en gazebo con el robot creado en la practica 2, con la posibilidad de teleoperar el robot y usar el brazo para coger cubos y situarlos en el compartimento del mismo. 
 
-Explicaremos como poner en ejecucion la practica, con los comandos necesarios, donde descargar el rosbag, con los datos de los topics de la imu y los joints del robot, y analizaremos las graficas del gasto, posicion de las ruedas y aceleracion con respecto al tiempo, describiendo el comportamiento del robot en momentos especificos de la teleoperacion.
+Explicaremos como poner en ejecucion la practica, con los comandos necesarios, donde descargar el rosbag, con los datos de los topics de la imu y los joints del robot, y analizaremos las graficas del gasto, posicion de las ruedas y aceleracion con respecto al tiempo, describiendo el comportamiento del robot en momentos especificos de la teleoperacion. 
+
+Antes de eso, para la parte a de la practica se pedia lanzar el robot_state_publisher y visualizar el robot en Rviz, y con la interfaz de usuario poder mover los joints, esto se puede apreciar en la siguiente imagen.
+
+![Robot en Rviz](./media/imagen_parte_a.png)
+
+Ademas, tambien se pedia una imagen para poder visualizar el arbol de transformadas entre los links del robot
+[PDF transformadas](./media/arbol_transformadas.pdf)
 
 ---
 
 ## Analisis de las graficas
 
 ### 1. G Parcial - Tiempo
+
+
 ![G Parcial - Tiempo](./media/tiempo_vs_g_parcial.png)
 
 ### 2. Posicion Ruedas - Tiempo
+
+
 ![Posicion Ruedas - Tiempo](./media/tiempo_vs_pos_ruedas.png)
 
 ### 3. Aceleracion - Tiempo
+
+
 ![Aceleracion - Tiempo](./media/tiempo_vs_aceleracion.png)
 
 ---
