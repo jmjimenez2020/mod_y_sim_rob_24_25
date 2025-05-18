@@ -21,12 +21,20 @@ Ademas, tambien se pedia una imagen para poder visualizar el arbol de transforma
 ![G Parcial - Tiempo](./media/tiempo_vs_g_parcial.png)
 
 ### 2. Posicion Ruedas - Tiempo
+Esta segunda grafica relaciona la posicion de las ruedas con el tiempo. Podemos observar como el joint de cada una de las ruedas va modificando su posicion cuando el robot se desplaza. A la hora de hacer que el robot avance o retroceda, para colocar el gripper justo encima del cubo las cuatro ruedas deberian desplazarse a la vez. Si se mantiene en la misma posicion significa que no se esta moviendo el robot. 
 
+En la grafica se aprecia como la posicion aumenta y desciende, esto es debido a que tuve que retroceder un poco y despues ir hacia delante mas lentamente para evitar pasarme de la posicion deseada. Si solo se mueve el robot hacia la derecha, la posicion de lsa ruedas de este lado variara mas que las del otro, aunque estas ultimas tambien podrian hacerlo. Si lo hacemos hacia la izquierda ocurre lo contrario.
+
+Se aprecia el momento en el que comenzamos a mover el robot con la teleoperacion, cuando comenzamos a ver cambios en las posiciones de las ruedas, y cuando acaba, en el momento que la posicion de las ruedas ya no varia, entonces estamos en el proceso de recoger el cubo, que ya hemos visto en la primera grafica.
 
 ![Posicion Ruedas - Tiempo](./media/tiempo_vs_pos_ruedas.png)
 
 ### 3. Aceleracion - Tiempo
+En cuanto a la ultima grafica podemos ver una serie de caracteristicas que son interesantes para observar. Lo primero que nos damos cuenta es que en las componentes x e y los valores estan estabilizados en torno a 0, sin embargo con el z no ocurre esto. Este hecho es debido a que se tienen en cuenta todas las aceleraciones que afecten a la imu en el entorno de gazebo, en este caso tenemos la gravedad tambien en juego, cosa que hace que la componente z se acerque a ese valor de 9,8. 
 
+Lo siguiente que podemos apreciar es los momentos en los cuales el robot se mueve o esta estatico. Sabemos diferenciar perfectamente que el primer tramo en el que tenemos la variaciones en las tres componentes de la imu, que se corresponde al momento en el que estamos teleoperando el robot para llevarlo a la zona del cubo. 
+
+Por ultimo, podemos apreciar cambios en las aceleraciones al final de la grafica, sin embargo estas no son debidas a que el robot se este moviendo o desplazando con las ruedas, es porque el robot esta moviendo el brazo, y esto puede causar que algunas veces se generen este tipo de variaciones en la aceleracion. 
 
 ![Aceleracion - Tiempo](./media/tiempo_vs_aceleracion.png)
 
