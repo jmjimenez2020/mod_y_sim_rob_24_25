@@ -25,15 +25,37 @@ El rosbag generado mientras el robot se desplaza hacia la caja situada en (5,0),
 
 [Descargar Rosbag](https://github.com/jmjimenez2020/mod_y_sim_rob_24_25/tree/main/rosbag)
 
+He añadido tambien un fichero con codigo que permite crear las graficas que se pedian en la practica con los datos del rosbag.
+
 ---
 
 ## Ejecucion
 
 Para poder ejecutar la practica en tu propio ordenador vamos a ir siguiendo una serie de pasos:
 - Clonar el repositorio en tu ordenador
+  
+  ```git clone https://github.com/jmjimenez2020/mod_y_sim_rob_24_25.git```
 - Compilar el repo y comprobar que se haya hecho correctamente
+  ```
+  colcon build
+  source install/setup.bash
 - Ejecutar los launchers. Primero iremos con el mundo de gazebo, en el que cargamos el robot tambien
+  
+  ```ros2 launch urjc_excavation_world urjc_excavation_msr.launch.py```
 - Ejecutar el move_group
+  
+  ```ros2 launch rover_moveit_config move_group.launch.py```
 - Ejecutar el launcher de los controladores
+  
+  ```ros2 launch robot_model_description robot_controllers.launch.py```
 - Ejecutar la teleoperacion
+  
+  ```ros2 run teleop_twist_keyboard teleop_twist_keyboard```
+
+Antes de ejecutar todo esto tendremos que tener instalados una serie de paquetes, de lo contrario tendremos fallos que nos impediran ejecutar los comandos. Podemos instalarlos mediante:
+
+```sudo apt install ros-jazzy-<nombre del paquete>```
+
 Si hemos hecho todo lo anterior y no hemos tenido ningun fallo, entonces podremos pasar a mover el robot por el mundo con la teleoperacion. Cuando lanzamos el mundo de gazebo tambien se abre en otra pestaña Rviz, cosa que permite que en cualquier momento podamos planificar que el brazo se desplace de una posicion a otra o que el gripper se abra o se cierre
+
+![Robot en gazebo](./media/imagen_simulacion.png)
