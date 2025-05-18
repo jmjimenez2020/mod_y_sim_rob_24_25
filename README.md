@@ -16,6 +16,10 @@ Ademas, tambien se pedia una imagen para poder visualizar el arbol de transforma
 ## Analisis de las graficas
 
 ### 1. G Parcial - Tiempo
+En esta primera grafica podemos diferenciar tres momentos claramente. El primero, que podemos intuir que es cuando teleoperamos el robot hacia la posicion destino, que podemos comprobar ademas si comparamos lo valores del tiempo en la grafica de la posicion de las ruedas. En este momento distinguimos variaciones en los joints del brazo debido a que el robot se esta moviendo, pero este quiere mantener la posicion del brazo fija, cosa que hace que el esfuerzo de las articulaciones varie para mantenerse como al principio.
+
+Vemos como todas las articulaciones mantienen el esfuerzo en 0 menos la prismatica del brazo, que tiene que empezar con un valor mas alto para compensar el de la gravedad, que haria que el robot no se mantuviera en su posicion.
+
 
 
 ![G Parcial - Tiempo](./media/tiempo_vs_g_parcial.png)
@@ -34,7 +38,7 @@ En cuanto a la ultima grafica podemos ver una serie de caracteristicas que son i
 
 Lo siguiente que podemos apreciar es los momentos en los cuales el robot se mueve o esta estatico. Sabemos diferenciar perfectamente que el primer tramo en el que tenemos la variaciones en las tres componentes de la imu, que se corresponde al momento en el que estamos teleoperando el robot para llevarlo a la zona del cubo. 
 
-Por ultimo, podemos apreciar cambios en las aceleraciones al final de la grafica, sin embargo estas no son debidas a que el robot se este moviendo o desplazando con las ruedas, es porque el robot esta moviendo el brazo, y esto puede causar que algunas veces se generen este tipo de variaciones en la aceleracion. 
+Por ultimo, podemos apreciar cambios en las aceleraciones al final de la grafica, sin embargo estas no son debidas a que el robot se este moviendo o desplazando con las ruedas, es porque el robot esta moviendo el brazo, y esto puede causar que algunas veces se generen este tipo de variaciones en la aceleracion. De hecho esto lo podemos comprobar si miramos la grafica de la posicion de las ruedas y comprobamos que no se mueven. 
 
 ![Aceleracion - Tiempo](./media/tiempo_vs_aceleracion.png)
 
